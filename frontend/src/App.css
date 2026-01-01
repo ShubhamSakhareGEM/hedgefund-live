@@ -1,0 +1,186 @@
+/* RESET & BASICS */
+:root {
+  --bg-dark: #0f172a;       /* Deep Slate */
+  --card-bg: #1e293b;       /* Lighter Slate */
+  --text-primary: #f8fafc;  /* Almost White */
+  --text-secondary: #94a3b8;/* Muted Blue-Gray */
+  --accent-blue: #3b82f6;   /* Professional Blue */
+  --border-color: #334155;
+  --success-bg: rgba(6, 78, 59, 0.5);
+  --success-border: #065f46;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  
+  /* CENTER THE APP ON SCREEN */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center Horizontally */
+  align-items: flex-start; /* Start from top (better for scrolling) */
+  padding-top: 40px;       /* Give some space from top */
+  box-sizing: border-box;
+}
+
+/* CONTAINER */
+.dashboard-container {
+  width: 100%;
+  max-width: 900px; /* Restrict width so it looks neat */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.brand-accent {
+  color: var(--accent-blue);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+/* INPUT SECTION */
+.input-section {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.api-inputs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-wrapper {
+  flex: 1;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  background: #020617; 
+  border: 1px solid var(--border-color);
+  color: white;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box; /* Fixes padding overflow issues */
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--accent-blue);
+}
+
+button {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+/* DASHBOARD GRID */
+.results-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARDS */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  
+  /* CRITICAL FIX: PREVENT OVERFLOW */
+  overflow: hidden; 
+  word-wrap: break-word;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.card-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-line; /* Preserves newlines */
+  color: #e2e8f0;
+}
+
+/* TWO COLUMNS FOR DATA & TECHNICALS */
+.top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* RECOMMENDATION CARD */
+.recommendation-card {
+  background: rgba(6, 78, 59, 0.2); /* Very subtle green */
+  border: 1px solid var(--success-border);
+}
+
+.recommendation-card .card-header {
+  color: #6ee7b7; /* Bright green text */
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .top-row {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+  .api-inputs {
+    flex-direction: column;
+  }
+}
