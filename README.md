@@ -4,7 +4,7 @@ I built this project to experiment with langgraph and see if autonomous agents c
 
 **Live Demo:** [Click here to view the App](https://hedgefund-live.vercel.app/)
 
-
+<img width="1440" height="859" alt="Screenshot 2026-01-01 at 18 40 31" src="https://github.com/user-attachments/assets/6961c085-987f-4022-bc78-8d8f48431325" />
 
 ---
 
