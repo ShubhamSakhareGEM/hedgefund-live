@@ -15,7 +15,7 @@ function App() {
     setResult(null);
     
     try {
-      const response = await axios.post('http://127.0.0.1:8000/analyze', {
+      const response = await axios.post('https://hedgefund-api.onrender.com/analyze', {
         ticker: ticker.toUpperCase(),
         groq_api_key: keys.groq,
         tavily_api_key: keys.tavily
