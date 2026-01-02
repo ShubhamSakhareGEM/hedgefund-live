@@ -1,10 +1,10 @@
-/* RESET & BASICS */
+/*basics*/
 :root {
-  --bg-dark: #0f172a;       /* Deep Slate */
-  --card-bg: #1e293b;       /* Lighter Slate */
-  --text-primary: #f8fafc;  /* Almost White */
-  --text-secondary: #94a3b8;/* Muted Blue-Gray */
-  --accent-blue: #3b82f6;   /* Professional Blue */
+  --bg-dark: #0f172a; 
+  --card-bg: #1e293b;  
+  --text-primary: #f8fafc; 
+  --text-secondary: #94a3b8;
+  --accent-blue: #3b82f6;  
   --border-color: #334155;
   --success-bg: rgba(6, 78, 59, 0.5);
   --success-border: #065f46;
@@ -17,25 +17,24 @@ body {
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  
-  /* CENTER THE APP ON SCREEN */
+
   min-height: 100vh;
   display: flex;
-  justify-content: center; /* Center Horizontally */
-  align-items: flex-start; /* Start from top (better for scrolling) */
-  padding-top: 40px;       /* Give some space from top */
+  justify-content: center;
+  align-items: flex-start; 
+  padding-top: 40px; 
   box-sizing: border-box;
 }
 
-/* CONTAINER */
+/*container*/
 .dashboard-container {
   width: 100%;
-  max-width: 900px; /* Restrict width so it looks neat */
+  max-width: 900px; 
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* HEADER */
+/*header*/
 header {
   text-align: center;
   margin-bottom: 30px;
@@ -56,7 +55,7 @@ h1 {
   margin-top: 8px;
 }
 
-/* INPUT SECTION */
+/*input*/
 .input-section {
   background: var(--card-bg);
   padding: 24px;
@@ -90,7 +89,7 @@ input {
   font-size: 1rem;
   width: 100%;
   outline: none;
-  box-sizing: border-box; /* Fixes padding overflow issues */
+  box-sizing: border-box; 
   transition: border-color 0.2s;
 }
 
@@ -119,22 +118,21 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* DASHBOARD GRID */
+/*dashboard*/
 .results-grid {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* CARDS */
+/*cards*/
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  
-  /* CRITICAL FIX: PREVENT OVERFLOW */
+
   overflow: hidden; 
   word-wrap: break-word;
 }
@@ -154,31 +152,29 @@ button:disabled {
 .card-content {
   font-size: 1rem;
   line-height: 1.6;
-  white-space: pre-line; /* Preserves newlines */
+  white-space: pre-line;
   color: #e2e8f0;
 }
 
-/* TWO COLUMNS FOR DATA & TECHNICALS */
 .top-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-/* RECOMMENDATION CARD */
+/*recomendation*/
 .recommendation-card {
-  background: rgba(6, 78, 59, 0.2); /* Very subtle green */
+  background: rgba(6, 78, 59, 0.2); 
   border: 1px solid var(--success-border);
 }
 
 .recommendation-card .card-header {
-  color: #6ee7b7; /* Bright green text */
+  color: #6ee7b7; 
 }
 
-/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
   .top-row {
-    grid-template-columns: 1fr; /* Stack on mobile */
+    grid-template-columns: 1fr; 
   }
   .api-inputs {
     flex-direction: column;
