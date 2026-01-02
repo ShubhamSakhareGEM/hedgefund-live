@@ -6,7 +6,7 @@ import os
 
 app = FastAPI()
 
-# Allow frontend to talk to backend
+#frontend-backend connection
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
@@ -22,17 +22,14 @@ class RequestData(BaseModel):
 @app.post("/analyze")
 async def analyze_stock(data: RequestData):
     try:
-        # Print to confirm we received data
         print(f"Received request for: {data.ticker}") 
         
         result = run_analysis(data.ticker, data.groq_api_key, data.tavily_api_key)
         return result
     except Exception as e:
-        # --- NEW CODE TO PRINT ERROR ---
         import traceback
         traceback.print_exc()
         print(f"ERROR: {str(e)}")
-        # -------------------------------
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
