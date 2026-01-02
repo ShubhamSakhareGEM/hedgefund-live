@@ -7,7 +7,7 @@ from typing import TypedDict
 from tavily import TavilyClient
 import os
 
-# Define State
+#defining State
 class AgentState(TypedDict):
     ticker: str
     price_data: str
@@ -15,15 +15,15 @@ class AgentState(TypedDict):
     technical_analysis: str
     final_recommendation: str
 
-# --- Helper Functions ---
+#helper functions
 def get_stock_data(ticker):
     try:
         stock = yf.Ticker(ticker)
-        hist = stock.history(period="1mo")
+        hist=stock.history(period="1mo")
         if hist.empty: return None
-        current = hist['Close'].iloc[-1]
-        start = hist['Close'].iloc[0]
-        change = ((current - start) / start) * 100
+        current= hist['Close'].iloc[-1]
+        start=hist['Close'].iloc[0]
+        change=((current - start) / start) * 100
         return f"Current Price: ${current:.2f}, 1-Month Change: {change:.2f}%"
     except: return None
 
@@ -48,7 +48,7 @@ def get_news(ticker, api_key):
         return "\n".join([f"- {r['content']}" for r in response['results']])
     except: return "No news found."
 
-# --- Agent Logic ---
+#agent logic
 def run_analysis(ticker: str, groq_key: str, tavily_key: str):
     
     def researcher(state):
@@ -68,8 +68,6 @@ def run_analysis(ticker: str, groq_key: str, tavily_key: str):
         prompt = ChatPromptTemplate.from_template("As a Portfolio Manager, give a final Buy/Sell/Hold call for {ticker} based on: \nPrice: {price}\nNews: {news}\nTechs: {tech}. Keep it concise.")
         chain = prompt | llm | StrOutputParser()
         
-        # --- THE FIX IS HERE ---
-        # We manually map the state variables to the prompt variables
         return {"final_recommendation": chain.invoke({
             "ticker": state["ticker"],
             "price": state["price_data"],
@@ -77,7 +75,7 @@ def run_analysis(ticker: str, groq_key: str, tavily_key: str):
             "tech": state["technical_analysis"]
         })}
 
-    # Graph Construction
+    #graph construction
     workflow = StateGraph(AgentState)
     workflow.add_node("researcher", researcher)
     workflow.add_node("analyst", analyst)
