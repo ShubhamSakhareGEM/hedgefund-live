@@ -32,19 +32,22 @@ function App() {
     <div className="dashboard-container">
       <header>
         <h1>HedgeFund<span className="brand-accent">GPT</span></h1>
-        <p className="subtitle">Autonomous AI Agent Team for Stock Analysis</p>
+        <p className="subtitle">AI Agent for Stock Analysis</p>
       </header>
       {/*instructions*/}
       <div className="instruction-box">
         <p>
           This AI agent conducts fundamental research, technical analysis and risk management to generate stock reports.
         </p>
-        <div className="key-links">
-          <span>You need free API keys to run the agents:</span>
-          <br/>
-          <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">Get Groq Key</a>
-          <span className="divider">•</span>
-          <a href="https://tavily.com/" target="_blank" rel="noopener noreferrer">Get Tavily Key</a>
+        <div className="key-requirements">
+          <div className="key-item">
+            <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">Get Groq Key</a>
+            <span className="key-desc"> — Powers the AI agents (Llama 3)</span>
+          </div>
+          <div className="key-item">
+            <a href="https://tavily.com/" target="_blank" rel="noopener noreferrer">Get Tavily Key</a>
+            <span className="key-desc"> — Fetches real-time financial news</span>
+          </div>
         </div>
       </div>
       {/*input section */}
