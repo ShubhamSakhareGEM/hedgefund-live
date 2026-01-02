@@ -186,36 +186,42 @@ button:disabled {
   background: rgba(30, 41, 59, 0.5);
   border: 1px dashed var(--border-color);
   border-radius: 12px;
-  padding: 16px;
+  padding: 20px;
   text-align: center;
   margin-bottom: 25px;
   font-size: 0.95rem;
 }
 
-.instruction-box p {
-  margin: 0 0 12px 0;
+.main-desc {
+  margin: 0 0 15px 0;
   color: var(--text-secondary);
   line-height: 1.5;
 }
 
-.key-links {
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  font-weight: 500;
+.key-requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between the two key lines */
+  align-items: center;
 }
 
-.key-links a {
+.key-item {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.key-item a {
   color: var(--accent-blue);
   text-decoration: none;
-  margin: 0 8px;
+  font-weight: 600;
   transition: color 0.2s;
 }
 
-.key-links a:hover {
-  color: #60a5fa;
+.key-item a:hover {
   text-decoration: underline;
+  color: #60a5fa;
 }
 
-.divider {
-  color: var(--border-color);
+.key-desc {
+  opacity: 0.8;
 }
