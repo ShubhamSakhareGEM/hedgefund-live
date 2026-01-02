@@ -42,11 +42,11 @@ function App() {
         <div className="key-requirements">
           <div className="key-item">
             <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">Get Groq Key</a>
-            <span className="key-desc"> — Powers the AI agents (Llama 3)</span>
+            <span className="key-desc">: Powers the AI agents (Llama 3)</span>
           </div>
           <div className="key-item">
             <a href="https://tavily.com/" target="_blank" rel="noopener noreferrer">Get Tavily Key</a>
-            <span className="key-desc"> — Fetches real-time financial news</span>
+            <span className="key-desc">: Fetches real-time financial news</span>
           </div>
         </div>
       </div>
