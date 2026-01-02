@@ -35,7 +35,7 @@ function App() {
         <p className="subtitle">Autonomous AI Agent Team for Stock Analysis</p>
       </header>
       
-      {/* Input Section */}
+      {/*input section */}
       <div className="input-section">
         <div className="api-inputs">
           <div className="input-wrapper">
@@ -68,11 +68,11 @@ function App() {
         </div>
       </div>
 
-      {/* Results Dashboard */}
+      {/*results dashboard */}
       {result && (
         <div className="results-grid">
           
-          {/* Top Row: Market Data & Technicals Side-by-Side */}
+          {/*top row*/}
           <div className="top-row">
             <div className="card">
               <div className="card-header">
@@ -97,7 +97,7 @@ function App() {
             </div>
           </div>
 
-          {/* Bottom Row: Recommendation (Full Width) */}
+          {/*bottom row*/}
           <div className="card recommendation-card">
             <div className="card-header">
               <ShieldAlert size={18} /> Portfolio Manager Verdict
